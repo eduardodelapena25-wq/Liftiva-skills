@@ -58,11 +58,23 @@ python3 run_eval.py -v opus
 | Tamaño | Líneas de código (`wc -l classifier.py`) |
 | Legibilidad | Tu juicio: ¿lo entiendes y podrías mantenerlo? |
 
-## Resultado de Fable 5 (esta sesión)
+## Resultados (comparación ya ejecutada — ver INFORME.md)
 
-- **Puntuación: 100.0 / 100** (36/36 casos perfectos), corrió a la primera.
-- Flujo completo one-shot: análisis de liftivamx.com → spec → implementación →
-  eval → esta documentación, en una sola sesión sin intervención.
+La comparación se corrió con evaluación cruzada: un agente Opus implementó la spec
+one-shot (`implementations/opus/classifier.py`, guardado sin correcciones) y otro
+agente Opus redactó un segundo examen desde la spec
+(`eval/leads_eval_opus.json`; 2 de sus 20 puntajes traían errores aritméticos del
+propio Opus — original en `eval/leads_eval_opus_original.json`).
+
+| Set | Fable 5 | Opus |
+|---|---|---|
+| Examen de Fable 5 (36 casos) | **100.0** | 87.8 |
+| Examen de Opus (20 casos) | **80.0** | 79.0 |
+| **Combinado (56 casos)** | **92.9** | **84.6** |
+
+Detalle, análisis de sensibilidad y hallazgos cualitativos en `INFORME.md`.
+Para reproducir: `python3 run_eval.py` y
+`python3 run_eval.py --eval eval/leads_eval_opus.json`.
 
 ## Nota de imparcialidad (importante)
 

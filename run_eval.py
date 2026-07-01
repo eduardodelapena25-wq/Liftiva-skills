@@ -116,9 +116,17 @@ def evaluar(nombre, classify, casos, verbose=False):
 
 
 def main():
-    args = [a for a in sys.argv[1:] if a != "-v"]
-    verbose = "-v" in sys.argv[1:]
-    casos = json.loads((RAIZ / "eval" / "leads_eval.json").read_text(encoding="utf-8"))
+    argv = sys.argv[1:]
+    verbose = "-v" in argv
+    argv = [a for a in argv if a != "-v"]
+    ruta_eval = RAIZ / "eval" / "leads_eval.json"
+    if "--eval" in argv:
+        i = argv.index("--eval")
+        ruta_eval = Path(argv[i + 1])
+        argv = argv[:i] + argv[i + 2:]
+    args = argv
+    print(f"[set de evaluación: {ruta_eval.name}]")
+    casos = json.loads(ruta_eval.read_text(encoding="utf-8"))
 
     base = RAIZ / "implementations"
     carpetas = [base / a for a in args] if args else sorted(

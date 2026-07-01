@@ -46,7 +46,8 @@ python3 run_eval.py                  # califica todas las implementaciones (36 c
 python3 run_eval.py -v fable5        # detalle de fallas de una implementación
 ```
 
-Resultado actual: **fable5 = 100.0/100** (36/36 casos perfectos, one-shot).
+Resultado de la comparación (56 casos, dos exámenes cruzados — ver `INFORME.md`):
+**Fable 5 = 92.9/100 · Opus = 84.6/100**.
 
 ## Estructura
 
