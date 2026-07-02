@@ -1,5 +1,12 @@
 # Liftiva — Motor de clasificación de leads + benchmark Fable 5 vs Opus
 
+> **Otros apartados de este repositorio**
+>
+> - [`control-remoto-pc/`](control-remoto-pc/README.md) — guía y scripts para
+>   controlar la PC de escritorio (2 monitores) desde la laptop con
+>   Sunshine + Moonlight. En Claude Code escribe `/control-remoto-pc` para que
+>   Claude te guíe paso a paso.
+
 Ejemplo práctico construido a partir del análisis de [liftivamx.com](https://liftivamx.com),
 diseñado además como banco de pruebas para comparar modelos (Fable 5 vs Opus) en una
 tarea real del negocio. Ver `BENCHMARK.md` para el protocolo de comparación.
